@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions - Teacher Training College</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Additional styles specific to admissions page */
+        .page-header-admissions {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 100px 0;
+            margin-bottom: 50px;
+        }
+        
+        .step-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .requirement-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .requirement-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .deadline-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .deadline-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .deadline-body {
+            padding: 20px;
+        }
+        
+        .deadline-date {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .fee-structure {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+        }
+        
+        .fee-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .fee-item:last-child {
+            border-bottom: none;
+        }
+        
+        .fee-total {
+            font-size: 1.3rem;
+            font-weight: bold;
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .application-form {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .form-section {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .form-section-title {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .document-upload {
+            border: 2px dashed #dee2e6;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .document-upload:hover {
+            border-color: var(--primary-color);
+            background: rgba(13,110,253,0.05);
+        }
+        
+        .document-upload i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .scholarship-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .scholarship-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .scholarship-header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .scholarship-body {
+            padding: 20px;
+        }
+        
+        .scholarship-amount {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .faq-accordion .accordion-item {
+            border: none;
+            margin-bottom: 15px;
+            border-radius: 10px !important;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .faq-accordion .accordion-button {
+            background: white;
+            font-weight: 600;
+        }
+        
+        .faq-accordion .accordion-button:not(.collapsed) {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .faq-accordion .accordion-button:focus {
+            box-shadow: none;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+        
+        .checklist-item i {
+            color: var(--primary-color);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .application-form {
+                padding: 20px;
+            }
+            
+            .step-card {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-chalkboard-teacher text-primary"></i> TEACH WITH EASE
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="academics.html">Academics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="admissions.html">Admissions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header-admissions">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">Admissions</h1>
+            <p class="lead">Start your journey towards becoming an educator</p>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Admissions</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Application Steps -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Application Process</h2>
+                <p class="lead text-muted">Follow these simple steps to apply to our programs</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h4>Check Requirements</h4>
+                        <p class="text-muted">Review program-specific admission requirements and deadlines</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h4>Complete Application</h4>
+                        <p class="text-muted">Fill out the online application form with your information</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h4>Submit Documents</h4>
+                        <p class="text-muted">Upload transcripts, recommendations, and other required documents</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h4>Pay Fee & Submit</h4>
+                        <p class="text-muted">Pay the application fee and submit your completed application</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Dates & Deadlines -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Important Dates & Deadlines</h2>
+                <p class="lead text-muted">Plan your application timeline</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="deadline-card">
+                        <div class="deadline-header">Fall Semester 2024</div>
+                        <div class="deadline-body">
+                            <div class="deadline-date">August 15, 2024</div>
+                            <p class="text-muted text-center">Application Deadline</p>
+                            <hr>
+                            <p><i class="fas fa-check-circle text-success me-2"></i> Early Decision: Dec 1, 2023</p>
+                            <p><i class="fas fa-check-circle text-success me-2"></i> Priority Deadline: Mar 1, 2024</p>
+                            <p><i class="fas fa-check-circle text-success me-2"></i> Final Deadline: Aug 15, 2024</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="deadline-card">
+                        <div class="deadline-header">Spring Semester 2024</div>
+                        <div class="deadline-body">
+                            <div class="deadline-date">December 15, 2023</div>
+                            <p class="text-muted text-center">Application Deadline</p>
+                            <hr>
+                            <p><i class="fas fa-check-circle text-success me-2"></i> Early Decision: Sep 1, 2023</p>
+                            <p><i class="fas fa-check-circle text-success me-2"></i> Priority Deadline: Oct 15, 2023</p>
+                            <p><i class="fas fa-check-circle text-success me-2"></i> Final Deadline: Dec 15, 2023</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="deadline-card">
+                        <div class="deadline-header">Summer Session 2024</div>
+                        <div class="deadline-body">
+                            <div class="deadline-date">May 1, 2024</div>
+                            <p class="text-muted text-center">Application Deadline</p>
+                            <hr>
+                            <p><i class="fas fa-check-circle text-success me-2"></i> Priority Deadline: Mar 1, 2024</p>
+                            <p><i class="fas fa-check-circle text-success me-2"></i> International Deadline: Apr 1, 2024</p>
+                            <p><i class="fas fa-check-circle text-success me-2"></i> Final Deadline: May 1, 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Requirements -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Admission Requirements</h2>
+                <p class="lead text-muted">What you need to apply</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="h4 mb-4">Undergraduate Programs</h3>
+                    
+                    <div class="requirement-card">
+                        <h5><i class="fas fa-graduation-cap me-2 text-primary"></i> Educational Background</h5>
+                        <p class="text-muted mb-0">High school diploma or equivalent with minimum 2.5 GPA</p>
+                    </div>
+                    
+                    <div class="requirement-card">
+                        <h5><i class="fas fa-pencil-alt me-2 text-primary"></i> Standardized Tests</h5>
+                        <p class="text-muted mb-0">SAT/ACT scores (optional for 2024 admission)</p>
+                    </div>
+                    
+                    <div class="requirement-card">
+                        <h5><i class="fas fa-file-alt me-2 text-primary"></i> Transcripts</h5>
+                        <p class="text-muted mb-0">Official high school transcripts</p>
+                    </div>
+                    
+                    <div class="requirement-card">
+                        <h5><i class="fas fa-envelope me-2 text-primary"></i> Recommendations</h5>
+                        <p class="text-muted mb-0">2 letters of recommendation from teachers or counselors</p>
+                    </div>
+                    
+                    <div class="requirement-card">
+                        <h5><i class="fas fa-pen me-2 text-primary"></i> Personal Statement</h5>
+                        <p class="text-muted mb-0">500-word essay on why you want to become a teacher</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <h3 class="h4 mb-4">Graduate Programs</h3>
+                    
+                    <div class="requirement-card">
+                        <h5><i class="fas fa-graduation-cap me-2 text-primary"></i> Educational Background</h5>
+                        <p class="text-muted mb-0">Bachelor's degree from accredited institution with minimum 3.0 GPA</p>
+                    </div>
+                    
+                    <div class="requirement-card">
+                        <h5><i class="fas fa-pencil-alt me-2 text-primary"></i> Standardized Tests</h5>
+                        <p class="text-muted mb-0">GRE scores (waived for applicants with 3.5+ GPA)</p>
+                    </div>
+                    
+                    <div class="requirement-card">
+                        <h5><i class="fas fa-file-alt me-2 text-primary"></i> Transcripts</h5>
+                        <p class="text-muted mb-0">Official transcripts from all post-secondary institutions</p>
+                    </div>
+                    
+                    <div class="requirement-card">
+                        <h5><i class="fas fa-envelope me-2 text-primary"></i> Recommendations</h5>
+                        <p class="text-muted mb-0">3 professional letters of recommendation</p>
+                    </div>
+                    
+                    <div class="requirement-card">
+                        <h5><i class="fas fa-briefcase me-2 text-primary"></i> Resume/CV</h5>
+                        <p class="text-muted mb-0">Current resume highlighting teaching experience</p>
+                    </div>
+                    
+                    <div class="requirement-card">
+                        <h5><i class="fas fa-pen me-2 text-primary"></i> Statement of Purpose</h5>
+                        <p class="text-muted mb-0">1000-word essay on academic and career goals</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Online Application</h2>
+                <p class="lead text-muted">Complete the form below to start your application</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <form class="application-form" id="applicationForm">
+                        <!-- Personal Information -->
+                        <div class="form-section">
+                            <h4 class="form-section-title">Personal Information</h4>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">First Name *</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Last Name *</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Date of Birth *</label>
+                                    <input type="date" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Gender</label>
+                                    <select class="form-select">
+                                        <option>Select</option>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                        <option>Other</option>
+                                        <option>Prefer not to say</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Email *</label>
+                                    <input type="email" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Phone *</label>
+                                    <input type="tel" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Address Information -->
+                        <div class="form-section">
+                            <h4 class="form-section-title">Address Information</h4>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label">Street Address *</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">City *</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">State *</label>
+                                    <select class="form-select" required>
+                                        <option>Select State</option>
+                                        <option>California</option>
+                                        <option>New York</option>
+                                        <option>Texas</option>
+                                        <option>Florida</option>
+                                        <option>Illinois</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">ZIP Code *</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Country *</label>
+                                    <input type="text" class="form-control" value="United States" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Citizenship *</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Academic Information -->
+                        <div class="form-section">
+                            <h4 class="form-section-title">Academic Information</h4>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Program of Interest *</label>
+                                    <select class="form-select" required>
+                                        <option>Select Program</option>
+                                        <option>B.Ed in Elementary Education</option>
+                                        <option>B.Ed in Secondary Education</option>
+                                        <option>Master of Education (M.Ed)</option>
+                                        <option>M.Ed in Special Education</option>
+                                        <option>Early Childhood Certificate</option>
+                                        <option>Online Teaching Certificate</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Desired Start Term *</label>
+                                    <select class="form-select" required>
+                                        <option>Select Term</option>
+                                        <option>Fall 2024</option>
+                                        <option>Spring 2024</option>
+                                        <option>Summer 2024</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Highest Degree Earned *</label>
+                                    <select class="form-select" required>
+                                        <option>Select Degree</option>
+                                        <option>High School Diploma</option>
+                                        <option>Associate's Degree</option>
+                                        <option>Bachelor's Degree</option>
+                                        <option>Master's Degree</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">GPA *</label>
+                                    <input type="number" step="0.01" class="form-control" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Previous Institutions Attended</label>
+                                    <textarea class="form-control" rows="3" placeholder="List all previous colleges/universities attended"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Document Upload -->
+                        <div class="form-section">
+                            <h4 class="form-section-title">Required Documents</h4>
+                            
+                            <div class="mb-4">
+                                <label class="form-label">Transcripts *</label>
+                                <div class="document-upload">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <h5>Upload Transcripts</h5>
+                                    <p class="text-muted mb-2">Drag and drop or click to upload</p>
+                                    <p class="small text-muted">PDF, JPG, PNG (Max 5MB)</p>
+                                    <input type="file" class="d-none" id="transcriptUpload" accept=".pdf,.jpg,.png">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label">Personal Statement/Essay *</label>
+                                <div class="document-upload">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <h5>Upload Essay</h5>
+                                    <p class="text-muted mb-2">Drag and drop or click to upload</p>
+                                    <p class="small text-muted">PDF, DOC, DOCX (Max 5MB)</p>
+                                    <input type="file" class="d-none" id="essayUpload" accept=".pdf,.doc,.docx">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label">Recommendation Letters *</label>
+                                <div class="document-upload">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <h5>Upload Letters</h5>
+                                    <p class="text-muted mb-2">Drag and drop or click to upload</p>
+                                    <p class="small text-muted">PDF, JPG, PNG (Max 5MB each)</p>
+                                    <input type="file" class="d-none" id="letterUpload" accept=".pdf,.jpg,.png" multiple>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Additional Information -->
+                        <div class="form-section">
+                            <h4 class="form-section-title">Additional Information</h4>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">How did you hear about us?</label>
+                                <select class="form-select">
+                                    <option>Select</option>
+                                    <option>Website</option>
+                                    <option>Social Media</option>
+                                    <option>Current Student/Alumni</option>
+                                    <option>Education Fair</option>
+                                    <option>Advertisement</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Additional Comments or Questions</label>
+                                <textarea class="form-control" rows="4" placeholder="Any additional information you'd like to share..."></textarea>
+                            </div>
+                            
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                                <label class="form-check-label" for="termsCheck">
+                                    I certify that all information provided is true and complete. *
+                                </label>
+                            </div>
+                            
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="newsletterCheck">
+                                <label class="form-check-label" for="newsletterCheck">
+                                    I would like to receive email updates about deadlines and events
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg px-5">Submit Application</button>
+                            <p class="text-muted small mt-3">Application fee: $50 (payable upon submission)</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tuition & Fees -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Tuition & Fees</h2>
+                <p class="lead text-muted">Estimated costs for the academic year</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="fee-structure">
+                        <h4 class="mb-4">Undergraduate Programs</h4>
+                        <div class="fee-item">
+                            <span>Tuition (12-18 credits per semester)</span>
+                            <span class="fw-bold">$6,500</span>
+                        </div>
+                        <div class="fee-item">
+                            <span>Student Activities Fee</span>
+                            <span class="fw-bold">$300</span>
+                        </div>
+                        <div class="fee-item">
+                            <span>Technology Fee</span>
+                            <span class="fw-bold">$200</span>
+                        </div>
+                        <div class="fee-item">
+                            <span>Health Insurance</span>
+                            <span class="fw-bold">$1,200</span>
+                        </div>
+                        <div class="fee-item">
+                            <span>Books & Supplies</span>
+                            <span class="fw-bold">$600</span>
+                        </div>
+                        <div class="fee-total">
+                            <div class="d-flex justify-content-between">
+                                <span>Total Per Year:</span>
+                                <span class="fw-bold">$17,600</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="fee-structure">
+                        <h4 class="mb-4">Graduate Programs</h4>
+                        <div class="fee-item">
+                            <span>Tuition (9-12 credits per semester)</span>
+                            <span class="fw-bold">$7,200</span>
+                        </div>
+                        <div class="fee-item">
+                            <span>Student Activities Fee</span>
+                            <span class="fw-bold">$300</span>
+                        </div>
+                        <div class="fee-item">
+                            <span>Technology Fee</span>
+                            <span class="fw-bold">$200</span>
+                        </div>
+                        <div class="fee-item">
+                            <span>Health Insurance</span>
+                            <span class="fw-bold">$1,200</span>
+                        </div>
+                        <div class="fee-item">
+                            <span>Books & Supplies</span>
+                            <span class="fw-bold">$700</span>
+                        </div>
+                        <div class="fee-total">
+                            <div class="d-flex justify-content-between">
+                                <span>Total Per Year:</span>
+                                <span class="fw-bold">$19,200</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="alert alert-info mt-4">
+                <i class="fas fa-info-circle me-2"></i>
+                <strong>Note:</strong> International students may have additional fees. Please contact the admissions office for detailed information.
+            </div>
+        </div>
+    </section>
+
+    <!-- Scholarships & Financial Aid -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Scholarships & Financial Aid</h2>
+                <p class="lead text-muted">We're committed to making education affordable</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="scholarship-card">
+                        <div class="scholarship-header">
+                            <h4>Merit Scholarship</h4>
+                        </div>
+                        <div class="scholarship-body">
+                            <div class="scholarship-amount">Up to $5,000</div>
+                            <p class="text-muted">For outstanding academic achievement</p>
+                            <h6>Eligibility:</h6>
+                            <ul class="small">
+                                <li>3.5+ GPA</li>
+                                <li>Full-time enrollment</li>
+                                <li>Maintain 3.0 GPA</li>
+                            </ul>
+                            <button class="btn btn-outline-primary w-100">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="scholarship-card">
+                        <div class="scholarship-header">
+                            <h4>Teaching Excellence Award</h4>
+                        </div>
+                        <div class="scholarship-body">
+                            <div class="scholarship-amount">$3,000</div>
+                            <p class="text-muted">For future educators committed to teaching</p>
+                            <h6>Eligibility:</h6>
+                            <ul class="small">
+                                <li>Demonstrated commitment to teaching</li>
+                                <li>2 letters of recommendation</li>
+                                <li>Teaching essay required</li>
+                            </ul>
+                            <button class="btn btn-outline-primary w-100">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="scholarship-card">
+                        <div class="scholarship-header">
+                            <h4>Diversity in Education</h4>
+                        </div>
+                        <div class="scholarship-body">
+                            <div class="scholarship-amount">$4,000</div>
+                            <p class="text-muted">Promoting diversity in the teaching profession</p>
+                            <h6>Eligibility:</h6>
+                            <ul class="small">
+                                <li>Underrepresented groups</li>
+                                <li>First-generation college students</li>
+                                <li>Community involvement</li>
+                            </ul>
+                            <button class="btn btn-outline-primary w-100">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <p class="text-muted">90% of our students receive some form of financial aid</p>
+                <a href="#" class="btn btn-primary">Apply for Financial Aid</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Checklist -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="display-6 fw-bold mb-4">Application Checklist</h2>
+                    <p class="lead mb-4">Make sure you have everything ready before you start your application</p>
+                    
+                    <div class="checklist-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Completed online application form</span>
+                    </div>
+                    <div class="checklist-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Official transcripts from all institutions</span>
+                    </div>
+                    <div class="checklist-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Personal statement/essay</span>
+                    </div>
+                    <div class="checklist-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Letters of recommendation (2-3)</span>
+                    </div>
+                    <div class="checklist-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Resume/CV (graduate applicants)</span>
+                    </div>
+                    <div class="checklist-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Standardized test scores (if required)</span>
+                    </div>
+                    <div class="checklist-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Application fee ($50)</span>
+                    </div>
+                    <div class="checklist-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>International students: English proficiency scores</span>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow">
+                        <div class="card-body p-5">
+                            <h4 class="mb-4">Need Help?</h4>
+                            <p>Our admissions counselors are here to assist you through every step of the application process.</p>
+                            
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-phone-alt fa-2x text-primary me-3"></i>
+                                <div>
+                                    <h6 class="mb-1">Call Us</h6>
+                                    <p class="mb-0">(555) 123-4567</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-envelope fa-2x text-primary me-3"></i>
+                                <div>
+                                    <h6 class="mb-1">Email Us</h6>
+                                    <p class="mb-0">admissions@ttc.edu</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-calendar-alt fa-2x text-primary me-3"></i>
+                                <div>
+                                    <h6 class="mb-1">Schedule a Visit</h6>
+                                    <p class="mb-0">Book a campus tour or virtual meeting</p>
+                                </div>
+                            </div>
+                            
+                            <hr>
+                            
+                            <h5>Office Hours</h5>
+                            <p class="text-muted mb-0">Monday - Friday: 9:00 AM - 5:00 PM</p>
+                            <p class="text-muted">Saturday: 10:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Frequently Asked Questions</h2>
+                <p class="lead text-muted">Find answers to common questions about admissions</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion faq-accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    When is the application deadline?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Application deadlines vary by semester. Fall semester: August 15, Spring semester: December 15, Summer session: May 1. We encourage early application for priority consideration.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    What is the application fee?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    The application fee is $50 for all programs. Fee waivers are available for eligible students with financial need.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Do you require standardized tests?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    SAT/ACT scores are optional for undergraduate applicants. Graduate applicants may need to submit GRE scores, but waivers are available for those with high GPAs or relevant experience.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Can international students apply?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, we welcome international applicants. Additional requirements include English proficiency tests (TOEFL/IELTS) and credential evaluation.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    When will I receive admission decision?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Admission decisions are typically released within 4-6 weeks after the application deadline. Early decision applicants hear back within 2-3 weeks.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">Ready to Begin Your Journey?</h2>
+            <p class="lead mb-4">Start your application today and take the first step towards a rewarding teaching career.</p>
+            <a href="#applicationForm" class="btn btn-light btn-lg me-2">Apply Now</a>
+            <a href="contact.html" class="btn btn-outline-light btn-lg">Contact Admissions</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+     <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Teacher Training College</h5>
+                    <p class="text">Shaping future educators since 1985</p>
+                    <p>The Teacher Training College is dedicated to preparing exceptional educators for the modern classroom.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list">
+                        <li><a href="about.html" class="text text-decoration-none">About Us</a></li>
+                        <li><a href="academics.html" class="text text-decoration-none">Programs</a></li>
+                        <li><a href="admissions.html" class="text text-decoration-none">Admissions</a></li>
+                        <li><a href="contact.html" class="text text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled text">
+                        <li><i class="fas fa-map-marker-alt me-2"></i>123 Education Ave, Learning City</li>
+                        <li><i class="fas fa-phone me-2"></i>(555) 123-4567</li>
+                        <li><i class="fas fa-envelope me-2"></i>info@ttc.edu</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="text-center text">
+                <small>&copy; 2026 Teacher Training College. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    
+    <script>
+        // File upload functionality
+        document.querySelectorAll('.document-upload').forEach(uploadArea => {
+            const fileInput = uploadArea.querySelector('input[type="file"]');
+            
+            uploadArea.addEventListener('click', () => {
+                fileInput.click();
+            });
+            
+            uploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadArea.style.borderColor = 'var(--primary-color)';
+                uploadArea.style.background = 'rgba(13,110,253,0.05)';
+            });
+            
+            uploadArea.addEventListener('dragleave', () => {
+                uploadArea.style.borderColor = '#dee2e6';
+                uploadArea.style.background = 'transparent';
+            });
+            
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadArea.style.borderColor = '#dee2e6';
+                uploadArea.style.background = 'transparent';
+                
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    fileInput.files = files;
+                    // Update UI to show file selected
+                    const fileName = files[0].name;
+                    uploadArea.querySelector('h5').textContent = `Selected: ${fileName}`;
+                }
+            });
+            
+            fileInput.addEventListener('change', () => {
+                if (fileInput.files.length > 0) {
+                    const fileName = fileInput.files[0].name;
+                    uploadArea.querySelector('h5').textContent = `Selected: ${fileName}`;
+                }
+            });
+        });
+        
+        // Form submission
+        document.getElementById('applicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Submitting...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                // Show success message
+                alert('Application submitted successfully! We will contact you soon.');
+                
+                // Reset form
+                this.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // Reset file upload texts
+                document.querySelectorAll('.document-upload h5').forEach(el => {
+                    el.textContent = 'Drag and drop or click to upload';
+                });
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+/* Custom styles for Teacher Training College */
+
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+}
+
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navigation */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Cards */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+}
+
+/* Feature Cards */
+.features-section .card {
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.features-section .card:hover {
+    background: var(--primary-color);
+}
+
+.features-section .card:hover i,
+.features-section .card:hover h4,
+.features-section .card:hover p {
+    color: white !important;
+}
+
+.features-section .card i {
+    transition: color 0.3s ease;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(13,110,253,0.3);
+}
+
+.btn-outline-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(13,110,253,0.2);
+}
+
+/* Events Section */
+.list-group-item {
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 10px !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.list-group-item:hover {
+    transform: translateX(10px);
+    background-color: #f8f9fa;
+}
+
+.badge {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0b5ed7 100%) !important;
+}
+
+.newsletter-section .form-control {
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.newsletter-section .btn-light {
+    border-radius: 0 5px 5px 0;
+    border: none;
+}
+
+.newsletter-section .btn-light:hover {
+    background-color: #f8f9fa;
+    transform: translateY(0);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #1a1e2b 0%, #2d3349 100%) !important;
+}
+
+footer p {
+    color: #fff !important;
+}
+
+footer a {
+    transition: color 0.3s ease;
+    color: #fff !important;
+}
+
+footer a:hover {
+    color: var(--primary-color) !important;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    color: #fff !important;
+}
+
+.social-links a:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        text-align: center;
+        padding: 50px 0;
+    }
+    
+    .hero-section .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    .d-flex {
+        flex-direction: column;
+    }
+    
+    .features-section .card {
+        margin-bottom: 20px;
+    }
+    
+    .newsletter-section .btn-light {
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-section h1,
+.hero-section p,
+.hero-section .btn {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero-section p {
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.hero-section .btn {
+    animation-delay: 0.4s;
+    opacity: 0;
+}
+
+/* Loading Spinner */
+.spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--primary-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

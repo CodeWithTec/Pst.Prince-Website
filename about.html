@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Teacher Training College</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Additional styles specific to about page */
+        .page-header {
+            background: linear-gradient(135deg, #031049 0%, #290250 100%);
+            color: white;
+            padding: 100px 0;
+            margin-bottom: 50px;
+        }
+        
+        .mission-vision-card {
+            transition: transform 0.3s ease;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .mission-vision-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: var(--primary-color);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+        }
+        
+        .timeline-badge {
+            position: absolute;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        
+        .timeline-content {
+            width: 45%;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+        
+        .faculty-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faculty-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .faculty-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary-color);
+            margin: -75px auto 20px;
+        }
+        
+        .faculty-social a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            background: #f8f9fa;
+            border-radius: 50%;
+            color: var(--primary-color);
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .faculty-social a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .stats-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .stats-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .accreditation-badge {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .accreditation-badge:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .accreditation-badge:hover i {
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-badge {
+                left: 20px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 70px);
+                margin-left: 70px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar (same as index.html) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-chalkboard-teacher text-primary"></i> TEACH WITH EASE
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="academics.html">Academics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admissions.html">Admissions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">About Our College</h1>
+            <p class="lead">Shaping the future of education since 1985</p>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">About</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="mission-vision-card card h-100 shadow">
+                        <div class="card-body text-center p-5">
+                            <div class="mb-4">
+                                <i class="fas fa-bullseye fa-4x text-primary"></i>
+                            </div>
+                            <h2 class="h3 mb-3">Our Mission</h2>
+                            <p class="text-muted">To prepare competent, compassionate, and innovative educators who will inspire and empower the next generation of learners through excellence in teaching, research, and community engagement.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mission-vision-card card h-100 shadow">
+                        <div class="card-body text-center p-5">
+                            <div class="mb-4">
+                                <i class="fas fa-eye fa-4x text-primary"></i>
+                            </div>
+                            <h2 class="h3 mb-3">Our Vision</h2>
+                            <p class="text-muted">To be recognized as a leading center of teacher education excellence, producing graduates who transform classrooms and communities through innovative teaching practices and lifelong learning.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <div class="stats-card">
+                        <i class="fas fa-users fa-3x mb-3"></i>
+                        <div class="stats-number counter" data-target="5000">0</div>
+                        <p class="mb-0">Alumni</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-card">
+                        <i class="fas fa-chalkboard-teacher fa-3x mb-3"></i>
+                        <div class="stats-number counter" data-target="150">0</div>
+                        <p class="mb-0">Faculty</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-card">
+                        <i class="fas fa-graduation-cap fa-3x mb-3"></i>
+                        <div class="stats-number counter" data-target="25">0</div>
+                        <p class="mb-0">Programs</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-card">
+                        <i class="fas fa-globe fa-3x mb-3"></i>
+                        <div class="stats-number counter" data-target="30">0</div>
+                        <p class="mb-0">Partner Schools</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our History Timeline -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Our Journey</h2>
+                <p class="lead text-muted">Over three decades of excellence in teacher education</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-badge">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>1985</h4>
+                        <p class="text-muted">Founded as a small teacher training institute with just 50 students and 5 faculty members.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-badge">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>1995</h4>
+                        <p class="text-muted">Received national accreditation and expanded to offer Bachelor's degree programs.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-badge">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>2005</h4>
+                        <p class="text-muted">Opened new campus and introduced Master's degree programs in Education.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-badge">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>2015</h4>
+                        <p class="text-muted">Launched online learning programs and modern teaching facilities.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-badge">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>2023</h4>
+                        <p class="text-muted">Celebrated 5000+ alumni and ranked top teacher training college nationally.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Our Leadership</h2>
+                <p class="lead text-muted">Meet the dedicated professionals guiding our institution</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="faculty-card card text-center p-4">
+                        <img src="https://via.placeholder.com/150" alt="Dr. Sarah Johnson" class="mx-auto">
+                        <div class="card-body">
+                            <h4>Dr. Sarah Johnson</h4>
+                            <p class="text-primary mb-2">President</p>
+                            <p class="text-muted small">Ph.D. in Educational Leadership, 25+ years experience in higher education administration.</p>
+                            <div class="faculty-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="faculty-card card text-center p-4">
+                        <img src="https://via.placeholder.com/150" alt="Dr. Michael Chen" class="mx-auto">
+                        <div class="card-body">
+                            <h4>Dr. Michael Chen</h4>
+                            <p class="text-primary mb-2">Dean of Academics</p>
+                            <p class="text-muted small">Ed.D. in Curriculum Development, specialist in educational technology integration.</p>
+                            <div class="faculty-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="faculty-card card text-center p-4">
+                        <img src="https://via.placeholder.com/150" alt="Prof. Emily Rodriguez" class="mx-auto">
+                        <div class="card-body">
+                            <h4>Prof. Emily Rodriguez</h4>
+                            <p class="text-primary mb-2">Director of Student Affairs</p>
+                            <p class="text-muted small">M.Ed. in Counseling, dedicated to student success and well-being for 15+ years.</p>
+                            <div class="faculty-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accreditation & Affiliations -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Accreditations & Affiliations</h2>
+                <p class="lead text-muted">Recognized by leading educational bodies</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <div class="accreditation-badge">
+                        <i class="fas fa-certificate fa-3x text-primary mb-3"></i>
+                        <h5>NCATE</h5>
+                        <p class="small mb-0">National Council for Accreditation of Teacher Education</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="accreditation-badge">
+                        <i class="fas fa-university fa-3x text-primary mb-3"></i>
+                        <h5>CAEP</h5>
+                        <p class="small mb-0">Council for the Accreditation of Educator Preparation</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="accreditation-badge">
+                        <i class="fas fa-globe fa-3x text-primary mb-3"></i>
+                        <h5>INTASC</h5>
+                        <p class="small mb-0">Interstate Teacher Assessment and Support Consortium</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="accreditation-badge">
+                        <i class="fas fa-handshake fa-3x text-primary mb-3"></i>
+                        <h5>AACTE</h5>
+                        <p class="small mb-0">American Association of Colleges for Teacher Education</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campus Facilities -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Our Campus</h2>
+                <p class="lead text-muted">State-of-the-art facilities for modern teacher education</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow">
+                        <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Library">
+                        <div class="card-body">
+                            <h5>Education Library</h5>
+                            <p class="text-muted">Extensive collection of educational resources, journals, and digital materials.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow">
+                        <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Smart Classrooms">
+                        <div class="card-body">
+                            <h5>Smart Classrooms</h5>
+                            <p class="text-muted">Fully equipped with interactive technology for modern teaching methods.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow">
+                        <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Practice School">
+                        <div class="card-body">
+                            <h5>Practice School</h5>
+                            <p class="text-muted">On-campus laboratory school for hands-on teaching experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">What Our Alumni Say</h2>
+                <p class="lead text-muted">Success stories from our graduates</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="text-center p-5">
+                                    <img src="https://via.placeholder.com/100" class="rounded-circle mb-4" alt="Alumni">
+                                    <i class="fas fa-quote-left fa-3x text-primary mb-3"></i>
+                                    <p class="lead">"The Teacher Training College prepared me exceptionally well for my career. The hands-on practicum experience was invaluable."</p>
+                                    <h5>James Wilson</h5>
+                                    <p class="text-muted">High School Teacher, Class of 2015</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="text-center p-5">
+                                    <img src="https://via.placeholder.com/100" class="rounded-circle mb-4" alt="Alumni">
+                                    <i class="fas fa-quote-left fa-3x text-primary mb-3"></i>
+                                    <p class="lead">"The faculty here genuinely care about your success. I still reach out to my professors for guidance."</p>
+                                    <h5>Maria Garcia</h5>
+                                    <p class="text-muted">Elementary Principal, Class of 2010</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon bg-primary rounded-circle" aria-hidden="true"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon bg-primary rounded-circle" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">Ready to Start Your Journey?</h2>
+            <p class="lead mb-4">Join our community of future educators and make a difference in students' lives.</p>
+            <a href="admissions.html" class="btn btn-light btn-lg me-2">Apply Now</a>
+            <a href="contact.html" class="btn btn-outline-light btn-lg">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+     <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Teacher Training College</h5>
+                    <p class="text">Shaping future educators since 1985</p>
+                    <p>The Teacher Training College is dedicated to preparing exceptional educators for the modern classroom.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list">
+                        <li><a href="about.html" class="text text-decoration-none">About Us</a></li>
+                        <li><a href="academics.html" class="text text-decoration-none">Programs</a></li>
+                        <li><a href="admissions.html" class="text text-decoration-none">Admissions</a></li>
+                        <li><a href="contact.html" class="text text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled text">
+                        <li><i class="fas fa-map-marker-alt me-2"></i>123 Education Ave, Learning City</li>
+                        <li><i class="fas fa-phone me-2"></i>(555) 123-4567</li>
+                        <li><i class="fas fa-envelope me-2"></i>info@ttc.edu</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="text-center text">
+                <small>&copy; 2026 Teacher Training College. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
