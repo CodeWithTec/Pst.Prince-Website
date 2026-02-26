@@ -1,7 +1,7 @@
 /* Custom styles for Teacher Training College */
 
 :root {
-    --primary-color: #0d6efd;
+    --primary-color:  #00115a;
     --secondary-color: #6c757d;
     --success-color: #198754;
 }
@@ -14,7 +14,7 @@ body {
 
 /* Navigation */
 .navbar {
-    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand {
@@ -65,6 +65,7 @@ body {
 .features-section .card:hover h4,
 .features-section .card:hover p {
     color: white !important;
+    cursor: pointer;
 }
 
 .features-section .card i {
@@ -85,10 +86,11 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #0b5ed7;
-    border-color: #0a58ca;
+    background-color: #fff;
+    border-color: var(--primary-color);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(13,110,253,0.3);
+    color: var(--primary-color) !important;
 }
 
 .btn-outline-primary:hover {
