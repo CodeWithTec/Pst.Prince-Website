@@ -15,233 +15,7 @@
     <link rel="stylesheet" href="css/style.css">
     
     <style>
-        /* Additional styles specific to admissions page */
-        .page-header-admissions {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 100px 0;
-            margin-bottom: 50px;
-        }
-        
-        .step-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            height: 100%;
-        }
-        
-        .step-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-        
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 20px;
-        }
-        
-        .requirement-card {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-left: 4px solid var(--primary-color);
-            transition: all 0.3s ease;
-        }
-        
-        .requirement-card:hover {
-            transform: translateX(10px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .deadline-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        
-        .deadline-header {
-            background: var(--primary-color);
-            color: white;
-            padding: 15px;
-            font-weight: bold;
-            text-align: center;
-        }
-        
-        .deadline-body {
-            padding: 20px;
-        }
-        
-        .deadline-date {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-align: center;
-            margin: 15px 0;
-        }
-        
-        .fee-structure {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 15px;
-            padding: 30px;
-        }
-        
-        .fee-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-        }
-        
-        .fee-item:last-child {
-            border-bottom: none;
-        }
-        
-        .fee-total {
-            font-size: 1.3rem;
-            font-weight: bold;
-            background: rgba(255,255,255,0.2);
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-        
-        .application-form {
-            background: white;
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-        
-        .form-section {
-            margin-bottom: 30px;
-            padding-bottom: 30px;
-            border-bottom: 2px solid #f0f0f0;
-        }
-        
-        .form-section-title {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-        
-        .document-upload {
-            border: 2px dashed #dee2e6;
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .document-upload:hover {
-            border-color: var(--primary-color);
-            background: rgba(13,110,253,0.05);
-        }
-        
-        .document-upload i {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        
-        .scholarship-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            height: 100%;
-        }
-        
-        .scholarship-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
-        
-        .scholarship-header {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .scholarship-body {
-            padding: 20px;
-        }
-        
-        .scholarship-amount {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-align: center;
-            margin: 15px 0;
-        }
-        
-        .faq-accordion .accordion-item {
-            border: none;
-            margin-bottom: 15px;
-            border-radius: 10px !important;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .faq-accordion .accordion-button {
-            background: white;
-            font-weight: 600;
-        }
-        
-        .faq-accordion .accordion-button:not(.collapsed) {
-            background: var(--primary-color);
-            color: white;
-        }
-        
-        .faq-accordion .accordion-button:focus {
-            box-shadow: none;
-        }
-        
-        .checklist-item {
-            display: flex;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        
-        .checklist-item:last-child {
-            border-bottom: none;
-        }
-        
-        .checklist-item i {
-            color: var(--primary-color);
-            margin-right: 15px;
-            font-size: 1.2rem;
-        }
-        
-        @media (max-width: 768px) {
-            .application-form {
-                padding: 20px;
-            }
-            
-            .step-card {
-                margin-bottom: 20px;
-            }
-        }
+       
     </style>
 </head>
 <body>
@@ -399,27 +173,27 @@
                     <h3 class="h4 mb-4">Undergraduate Programs</h3>
                     
                     <div class="requirement-card">
-                        <h5><i class="fas fa-graduation-cap me-2 text-primary"></i> Educational Background</h5>
+                        <h5><i class="fas fa-graduation-cap me-2 " style="color: #031049;"></i> Educational Background</h5>
                         <p class="text-muted mb-0">High school diploma or equivalent with minimum 2.5 GPA</p>
                     </div>
                     
                     <div class="requirement-card">
-                        <h5><i class="fas fa-pencil-alt me-2 text-primary"></i> Standardized Tests</h5>
+                        <h5><i class="fas fa-pencil-alt me-2 " style="color: #031049;"></i> Standardized Tests</h5>
                         <p class="text-muted mb-0">SAT/ACT scores (optional for 2024 admission)</p>
                     </div>
                     
                     <div class="requirement-card">
-                        <h5><i class="fas fa-file-alt me-2 text-primary"></i> Transcripts</h5>
+                        <h5><i class="fas fa-file-alt me-2 " style="color: #031049;"></i> Transcripts</h5>
                         <p class="text-muted mb-0">Official high school transcripts</p>
                     </div>
                     
                     <div class="requirement-card">
-                        <h5><i class="fas fa-envelope me-2 text-primary"></i> Recommendations</h5>
+                        <h5><i class="fas fa-envelope me-2 " style="color: #031049;"></i> Recommendations</h5>
                         <p class="text-muted mb-0">2 letters of recommendation from teachers or counselors</p>
                     </div>
                     
                     <div class="requirement-card">
-                        <h5><i class="fas fa-pen me-2 text-primary"></i> Personal Statement</h5>
+                        <h5><i class="fas fa-pen me-2 " style="color: #031049;"></i> Personal Statement</h5>
                         <p class="text-muted mb-0">500-word essay on why you want to become a teacher</p>
                     </div>
                 </div>
@@ -428,32 +202,32 @@
                     <h3 class="h4 mb-4">Graduate Programs</h3>
                     
                     <div class="requirement-card">
-                        <h5><i class="fas fa-graduation-cap me-2 text-primary"></i> Educational Background</h5>
+                        <h5><i class="fas fa-graduation-cap me-2 " style="color: #031049;"></i> Educational Background</h5>
                         <p class="text-muted mb-0">Bachelor's degree from accredited institution with minimum 3.0 GPA</p>
                     </div>
                     
                     <div class="requirement-card">
-                        <h5><i class="fas fa-pencil-alt me-2 text-primary"></i> Standardized Tests</h5>
+                        <h5><i class="fas fa-pencil-alt me-2 " style="color: #031049;"></i> Standardized Tests</h5>
                         <p class="text-muted mb-0">GRE scores (waived for applicants with 3.5+ GPA)</p>
                     </div>
                     
                     <div class="requirement-card">
-                        <h5><i class="fas fa-file-alt me-2 text-primary"></i> Transcripts</h5>
+                        <h5><i class="fas fa-file-alt me-2 " style="color: #031049;"></i> Transcripts</h5>
                         <p class="text-muted mb-0">Official transcripts from all post-secondary institutions</p>
                     </div>
                     
                     <div class="requirement-card">
-                        <h5><i class="fas fa-envelope me-2 text-primary"></i> Recommendations</h5>
+                        <h5><i class="fas fa-envelope me-2 " style="color: #031049;"></i> Recommendations</h5>
                         <p class="text-muted mb-0">3 professional letters of recommendation</p>
                     </div>
                     
                     <div class="requirement-card">
-                        <h5><i class="fas fa-briefcase me-2 text-primary"></i> Resume/CV</h5>
+                        <h5><i class="fas fa-briefcase me-2 " style="color: #031049;"></i> Resume/CV</h5>
                         <p class="text-muted mb-0">Current resume highlighting teaching experience</p>
                     </div>
                     
                     <div class="requirement-card">
-                        <h5><i class="fas fa-pen me-2 text-primary"></i> Statement of Purpose</h5>
+                        <h5><i class="fas fa-pen me-2 " style="color: #031049;"></i> Statement of Purpose</h5>
                         <p class="text-muted mb-0">1000-word essay on academic and career goals</p>
                     </div>
                 </div>
@@ -783,7 +557,7 @@
                                 <li>Full-time enrollment</li>
                                 <li>Maintain 3.0 GPA</li>
                             </ul>
-                            <button class="btn btn-outline-primary w-100">Learn More</button>
+                            <button class="btn btn w-100" style="background: linear-gradient(135deg, #031049 0%, #0714ca 100%); color: #fff !important;">Learn More</button>
                         </div>
                     </div>
                 </div>
@@ -802,7 +576,7 @@
                                 <li>2 letters of recommendation</li>
                                 <li>Teaching essay required</li>
                             </ul>
-                            <button class="btn btn-outline-primary w-100">Learn More</button>
+                            <button class="btn btn w-100" style="background: linear-gradient(135deg, #031049 0%, #0714ca 100%); color: #fff !important;">Learn More</button>
                         </div>
                     </div>
                 </div>
@@ -821,7 +595,7 @@
                                 <li>First-generation college students</li>
                                 <li>Community involvement</li>
                             </ul>
-                            <button class="btn btn-outline-primary w-100">Learn More</button>
+                            <button class="btn btn w-100" style="background: linear-gradient(135deg, #031049 0%, #0714ca 100%); color: #fff !important;">Learn More</button>
                         </div>
                     </div>
                 </div>
@@ -843,35 +617,35 @@
                     <p class="lead mb-4">Make sure you have everything ready before you start your application</p>
                     
                     <div class="checklist-item">
-                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-check-circle" style="color: #031049;"></i>
                         <span>Completed online application form</span>
                     </div>
                     <div class="checklist-item">
-                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-check-circle" style="color: #031049;"></i>
                         <span>Official transcripts from all institutions</span>
                     </div>
                     <div class="checklist-item">
-                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-check-circle" style="color: #031049;"></i>
                         <span>Personal statement/essay</span>
                     </div>
                     <div class="checklist-item">
-                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-check-circle" style="color: #031049;"></i>
                         <span>Letters of recommendation (2-3)</span>
                     </div>
                     <div class="checklist-item">
-                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-check-circle" style="color: #031049;"></i>
                         <span>Resume/CV (graduate applicants)</span>
                     </div>
                     <div class="checklist-item">
-                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-check-circle" style="color: #031049;"></i>
                         <span>Standardized test scores (if required)</span>
                     </div>
                     <div class="checklist-item">
-                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-check-circle" style="color: #031049;"></i>
                         <span>Application fee ($50)</span>
                     </div>
                     <div class="checklist-item">
-                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-check-circle" style="color: #031049;"></i>
                         <span>International students: English proficiency scores</span>
                     </div>
                 </div>
@@ -883,7 +657,7 @@
                             <p>Our admissions counselors are here to assist you through every step of the application process.</p>
                             
                             <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-phone-alt fa-2x text-primary me-3"></i>
+                                <i class="fas fa-phone-alt fa-2x me-3" style="color: #031049;"></i>
                                 <div>
                                     <h6 class="mb-1">Call Us</h6>
                                     <p class="mb-0">(555) 123-4567</p>
@@ -891,7 +665,7 @@
                             </div>
                             
                             <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-envelope fa-2x text-primary me-3"></i>
+                                <i class="fas fa-envelope fa-2x me-3" style="color: #031049;"></i>
                                 <div>
                                     <h6 class="mb-1">Email Us</h6>
                                     <p class="mb-0">admissions@ttc.edu</p>
@@ -899,7 +673,7 @@
                             </div>
                             
                             <div class="d-flex align-items-center">
-                                <i class="fas fa-calendar-alt fa-2x text-primary me-3"></i>
+                                <i class="fas fa-calendar-alt fa-2x me-3" style="color: #031049;"></i>
                                 <div>
                                     <h6 class="mb-1">Schedule a Visit</h6>
                                     <p class="mb-0">Book a campus tour or virtual meeting</p>
@@ -1000,7 +774,7 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="py-5 bg-primary text-white">
+    <section class="py-5 bg-primary text-white" style="background: linear-gradient(135deg, #031049 0%, #0714ca 100%);">
         <div class="container text-center">
             <h2 class="mb-4">Ready to Begin Your Journey?</h2>
             <p class="lead mb-4">Start your application today and take the first step towards a rewarding teaching career.</p>
