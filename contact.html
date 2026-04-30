@@ -179,31 +179,32 @@
                             <p class="lead text-muted">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
                         </div>
                         
-                        <form id="contactForm">
+                        <form action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="9f697202-6acc-49fb-86a8-8990da845f9e">
                             <div class="row g-4">
                                 <div class="col-md-6">
                                     <label class="form-label">First Name *</label>
-                                    <input type="text" class="form-control" required>
+                                    <input type="text" name="First_Name" class="form-control" required>
                                 </div>
                                 
                                 <div class="col-md-6">
                                     <label class="form-label">Last Name *</label>
-                                    <input type="text" class="form-control" required>
+                                    <input type="text" name="Last_Name" class="form-control" required>
                                 </div>
                                 
                                 <div class="col-md-6">
                                     <label class="form-label">Email *</label>
-                                    <input type="email" class="form-control" required>
+                                    <input type="email" name="Email" class="form-control" required>
                                 </div>
                                 
                                 <div class="col-md-6">
                                     <label class="form-label">Phone</label>
-                                    <input type="tel" class="form-control">
+                                    <input type="tel" name="Phone" class="form-control">
                                 </div>
                                 
                                 <div class="col-12">
                                     <label class="form-label">Subject *</label>
-                                    <select class="form-select" required>
+                                    <select class="form-select" name="Subject" required>
                                         <option value="">Select a subject</option>
                                         <option>Admissions Inquiry</option>
                                         <option>Program Information</option>
@@ -216,12 +217,12 @@
                                 
                                 <div class="col-12">
                                     <label class="form-label">Message *</label>
-                                    <textarea class="form-control" rows="6" required></textarea>
+                                    <textarea class="form-control" name="Message" rows="6" required></textarea>
                                 </div>
                                 
                                 <div class="col-12">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="privacyCheck" required>
+                                        <input class="form-check-input" name="Agreed" type="checkbox" id="privacyCheck" required>
                                         <label class="form-check-label" for="privacyCheck">
                                             I agree to the <a href="#" class="text-primary">Privacy Policy</a> and consent to being contacted *
                                         </label>
@@ -278,6 +279,9 @@
                 </div>
                 
                 <div class="col-lg-6">
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="9f697202-6acc-49fb-86a8-8990da845f9e">
+
                     <div class="newsletter-card">
                         <i class="fas fa-envelope-open-text fa-3x mb-4"></i>
                         <h3>Subscribe to Our Newsletter</h3>
@@ -285,12 +289,13 @@
                         
                         <div class="newsletter-input">
                             <div class="input-group">
-                                <input type="email" class="form-control" placeholder="Enter your email address">
+                                <input type="email" name="Email" class="form-control" placeholder="Enter your email address">
                                 <button class="btn btn-dark" type="button">Subscribe</button>
                             </div>
                             <p class="small mt-3 opacity-75">We respect your privacy. Unsubscribe at any time.</p>
                         </div>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
