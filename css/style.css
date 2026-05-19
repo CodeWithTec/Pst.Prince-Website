@@ -329,7 +329,7 @@ footer a:hover {
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid var(--primary-color);
-            margin: -75px auto 20px;
+            margin: -15px auto 20px;
         }
         
         .faculty-social a {
